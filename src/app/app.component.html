@@ -1,0 +1,16 @@
+<h1 style="color: black; width: 100%; text-align: center">
+  <ng-container>eSport</ng-container>
+  <br />
+  <button (click)="renderedTree = 'start'">Start</button>
+</h1>
+
+<ng-container *ngIf="renderedTree === 'start'">
+  <ngtt-single-elimination-tree
+    [tournament]="TreeTournament"
+    [matchTemplate]="matchTemplate"
+  ></ngtt-single-elimination-tree>
+</ng-container>
+
+<ng-template #matchTemplate let-match>
+  <tt-match [match]="match"></tt-match>
+</ng-template>
